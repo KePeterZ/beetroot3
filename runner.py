@@ -1,7 +1,7 @@
 #!/usr/bin/env micropython
 
 # Start by importing the core library
-from core import myRobot
+from easy import myRobot
 b = myRobot("outB", "outC", "outD", "in4", None, "in3", None, 1, moduleSensor="in4", modulePort2="outA")
 
 # Import misc. libraries
@@ -16,6 +16,7 @@ while True:
   input("Press enter when ready..")
   exec(removeStatement)
   exec(importStatement)
+  b.prepareForRun()
   try:
     exec(run+"def(b)")
   except KeyboardInterrupt:

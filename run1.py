@@ -1,8 +1,14 @@
-from core import myRobot
+from easy import myRobot
 
 def run1def(b: myRobot):
-  b.goWithGyroRot2(3, -99, 3, True)
-  b.fullStop()
+  # b.elore()
+  # b.hatra()
+  # b.jobbra()
+  # b.balra()
+  b.modulok(1, -50, 0.5, -100)
+  b.egyszerre(20, 5)
+  b.egyszerre(-20, 5)
+  b.fullStop(False)
   pass
 
 if __name__ == '__main__':
