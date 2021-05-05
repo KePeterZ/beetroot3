@@ -85,17 +85,17 @@ class myRobot():
           if log: print(self.gs.value())
           pass
 
-    def modulok(self, lAmount, lSpeed, rAmount, rSpeed):
+    def modulok(self, lAmount, lSpeed, rAmount, rSpeed, block=True):
       if(rAmount > lAmount):
         self.mmt.on_for_seconds(lSpeed, lAmount, block=False)
-        self.mmt2.on_for_seconds(rSpeed, rAmount)
+        self.mmt2.on_for_seconds(rSpeed, rAmount, block)
       else:
         self.mmt2.on_for_seconds(rSpeed, rAmount, block=False)
-        self.mmt.on_for_seconds(lSpeed, lAmount)
+        self.mmt.on_for_seconds(lSpeed, lAmount, block)
 
-    def egyszerre(self, speed, amount):
+    def egyszerre(self, speed, amount, block=True):
       self.mmt2.on_for_seconds(speed, amount, block=False)
-      self.mmt.on_for_seconds(speed*-1, amount)  
+      self.mmt.on_for_seconds(speed*-1, amount, block)  
 
     def prepareForRun(self): # Reset gyro and motors
         self.ms.reset()
