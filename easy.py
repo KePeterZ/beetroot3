@@ -61,7 +61,7 @@ class myRobot():
 
     def hatra(self, rots=1, speed=50, adj=2, absWay=None, end=None):
         pastGyro = self.gs.value() if absWay == None else absWay
-        currentRot = (self.m1.position+self.m1.position)/2
+        currentRot = (self.m1.position+self.m2.position)/2
         speed = speed*-1
         steerDiff = -1 if speed < 0 else 1
         startTime = time.time()
@@ -95,7 +95,7 @@ class myRobot():
 
     def egyszerre(self, speed, amount, block=True):
       self.mmt2.on_for_seconds(speed, amount, block=False)
-      self.mmt.on_for_seconds(speed*-1, amount, block)  
+      self.mmt.on_for_seconds(speed, amount, block)  
 
     def prepareForRun(self): # Reset gyro and motors
         self.ms.reset()
@@ -180,9 +180,9 @@ class myRobot():
 
     def resetMotors(self): # Motor reset
         self.ms.reset()
-        self.mmt.on(100)
-        time.sleep(1)
-        self.mmt.reset()
+        # self.mmt.on(100)
+        # time.sleep(1)
+        # self.mmt.reset()
 
     def gyroReset(self): # Gyro reset
         self.gs.mode = "GYRO-RATE"; self.gs.mode = "GYRO-ANG"

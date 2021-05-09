@@ -5,7 +5,7 @@ from easy import myRobot
 b = myRobot("outB", "outC", "outD", "in4", None, "in3", None, 1, moduleSensor="in4", modulePort2="outA")
 
 # Import misc. libraries
-import sys, time
+import sys, time, os
 
 run = sys.argv[-1].strip()
 importStatement = "from " + run + " import " + run+"def"
@@ -20,4 +20,5 @@ while True:
   try:
     exec(run+"def(b)")
   except KeyboardInterrupt:
-    b.fullStop()
+    pass
+  b.fullStop(False)
