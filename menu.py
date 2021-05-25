@@ -7,12 +7,7 @@ b = myRobot("outB", "outC", "outD", "in4", None, "in3", None, 1, moduleSensor="i
 # Import misc. libraries
 import sys, time
 
-files = ["run1", "run2", "run4", "run5"]
-
-# run = sys.argv[-1].strip()
-# importStatement = "from " + run + " import " + run+"def"
-# removeStatement = "del sys.modules['" + run + "']"
-# exec(importStatement)
+files = ["run1", "run2", "run4", "run6", "run5"]
 
 count = 0
 while True:
